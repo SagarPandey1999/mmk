@@ -27,6 +27,7 @@ class UserAuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->last_seen = now();
         $query = $user->save();
 
         if($query){
@@ -57,8 +58,9 @@ class UserAuthController extends Controller
     function profile(){
 
         if(session()->has('LoggedUser')){
-            $user = User::all();
+            $user = User::select("*")->whereNotNull('last_seen')->orderBy('last_seen','DESC')->paginate(10);
             $container['users'] = $user;
+            // dd($container);
         }
         return view('admin.user.index',$container);
     }

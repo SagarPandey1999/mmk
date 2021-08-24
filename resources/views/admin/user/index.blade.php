@@ -16,6 +16,8 @@
                     <tr>
                       <th>Name</th>
                       <th>Email</th>
+                      <th>Last Seen</th>
+                      <th></th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -24,6 +26,16 @@
                     <tr>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
+                      <td>
+                        {{ Carbon\Carbon::parse($user->last_seen)->diffForHumans() }}
+                      </td>
+                      <td>
+                        @if(Cache::has('user-is-online-' . $user->id))
+                            <span class="text-success">Online</span>
+                        @else
+                            <span class="text-secondary">Offline</span>
+                        @endif
+                      </td>
                       <td><a class="btn btn-danger" onclick="return confirm('Are you sure!!')" href="{{ route('user.delete',['id'=>$user->id]) }}">
                         Delete
                     </a></td>
