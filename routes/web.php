@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,6 @@ Route::post('check',[UserAuthController::class,'check'])->name('auth.check');
 Route::get('users',[UserAuthController::class,'profile'])->name('users');
 Route::get('user/{id}',[UserAuthController::class,'delete'])->name('user.delete');
 Route::get('logout',[UserAuthController::class,'logout']);
+Route::post('contact',[HomeController::class,'contact'])->name('contact');
+Route::get('/contacts',[AdminController::class,'contactindex'])->name('contacts');
+Route::get('/delete-contact/{id}',[AdminController::class,'delete'])->name('contact.delete');
