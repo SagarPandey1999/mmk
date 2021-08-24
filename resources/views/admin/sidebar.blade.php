@@ -18,6 +18,12 @@
           <span class="menu-title">Users</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ route('contacts') == url()->current() ? 'active' : '' }}" href="{{ route('contacts') }}">
+          <i class="fa fa-phone menu-icon"></i>
+          <span class="menu-title">Contact</span>
+        </a>
+      </li>
       {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="icon-disc menu-icon"></i>
@@ -31,12 +37,6 @@
           </ul>
         </div>
       </li> --}}
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <i class="icon-file menu-icon"></i>
-          <span class="menu-title">Form elements</span>
-        </a>
-      </li>
       {{-- <li class="nav-item">
         <a class="nav-link" href="pages/charts/chartjs.html">
           <i class="icon-pie-graph menu-icon"></i>
