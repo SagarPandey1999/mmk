@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Companys;
 use App\Models\contact;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('front.index');
+        $company = Companys::all();
+        $container['companys'] = $company;
+        return view('front.index',$container);
     }
     
     public function contact(Request $request){

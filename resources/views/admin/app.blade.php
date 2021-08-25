@@ -6,8 +6,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="admin/images/logo.svg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="admin/images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('admin/images/logo.svg')}}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('admin/images/logo-mini.svg')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -60,21 +60,21 @@
   <!-- container-scroller -->
 
   <!-- base:js -->
-  <script src="admin/vendors/base/vendor.bundle.base.js"></script>
+  <script src="{{ asset('admin/vendors/base/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="admin/js/off-canvas.js"></script>
-  <script src="admin/js/hoverable-collapse.js"></script>
-  <script src="admin/js/template.js"></script>
+  <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
+  <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
+  <script src="{{ asset('admin/js/template.js') }}"></script>
   <!-- endinject -->
   <!-- plugin js for this page -->
-  <script src="admin/vendors/chart.js/Chart.min.js"></script>
-  <script src="admin/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+  <script src="{{ asset('admin/vendors/chart.js/Chart.min.js') }}"></script>
+  <script src="{{ asset('admin/vendors/jquery-bar-rating/jquery.barrating.min.js') }}"></script>
   <!-- End plugin js for this page -->
   <!-- Custom js for this page-->
-  <script src="admin/js/dashboard.js"></script>
+  <script src="{{ asset('admin/js/dashboard.js') }}"></script>
   <!-- End custom js for this page-->
   @yield('extra_javascripts')
 

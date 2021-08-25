@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="user-profile">
       <div class="user-image">
-        <img src="admin/images/MMK-LOGO-PNG.png" style="width: 81px;
+        <img src="{{ asset('admin/images/MMK-LOGO-PNG.png')}}" style="width: 81px;
         height: 60px;">
       </div>
       <div class="user-name">
@@ -14,7 +14,7 @@
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link {{ route('users') == url()->current() ? 'active' : '' }}" href="{{ route('users') }}">
-          <i class="icon-box menu-icon"></i>
+          <i class="fa fa-user menu-icon"></i>
           <span class="menu-title">Users</span>
         </a>
       </li>
@@ -24,6 +24,13 @@
           <span class="menu-title">Contact</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ route('company') == url()->current() ? 'active' : '' }}" href="{{ route('company') }}">
+          <i class="fa fa-building menu-icon"></i>
+          <span class="menu-title">Company</span>
+        </a>
+      </li>
+
       {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="icon-disc menu-icon"></i>
