@@ -30,6 +30,12 @@
           <span class="menu-title">Company</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ route('services') == url()->current() ? 'active' : '' }}" href="{{ route('services') }}">
+          <i class="fa fa-cogs menu-icon"></i>
+          <span class="menu-title">Service</span>
+        </a>
+      </li>
 
       {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
