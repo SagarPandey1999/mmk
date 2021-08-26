@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Companys;
 use App\Models\contact;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -68,5 +69,58 @@ class AdminController extends Controller
                 $data->save();
                 return redirect('company');
             }
+    }
+
+    public function services(){
+        $data = Service::all();
+        $container['services'] = $data;
+        return view('admin.service.index',$container);
+    }
+
+    public function servicecreate(){
+        return view('admin.service.create');
+    }
+
+    public function serviceinsert(Request $request){
+        $data = new Service();
+        $image = $request->image;
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('serviceimage',$imagename);
+
+            $data->image = $imagename;
+            $data->name = $request->name;
+            $data->description = $request->description;
+            $data->link = $request->link;
+            $data->save();
+            return redirect('services');
+    }
+
+    public function servicedelete($id){
+        $data = Service::find($id);
+        $data->delete();
+        return redirect('services');
+    }
+
+    public function serviceedit($id){
+        $data = Service::find($id);
+        $container['service'] = $data;
+        return view('admin.service.edit',$container);
+    }
+
+    public function serviceupdate($id,Request $request){
+        $data = Service::find($id);
+        if($request->image){
+            $image = $request->image;
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('serviceimage',$imagename);
+
+            $data->image = $imagename;
+        }
+            $data->name = $request->name;
+            $data->description = $request->description;
+            $data->link = $request->link;
+            $data->save();
+            return redirect('services');
+
     }
 }

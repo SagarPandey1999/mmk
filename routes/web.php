@@ -33,3 +33,9 @@ Route::post('/company/insert',[AdminController::class,'companyinsert'])->name('c
 Route::get('/company/delete/{id}',[AdminController::class,'companydelete'])->name('company.delete');
 Route::get('/company/edit/{id}',[AdminController::class,'companyedit'])->name('company.edit');
 Route::post('/company/update',[AdminController::class,'companyupdate'])->name('company.update');
+Route::get('/services',[AdminController::class,'services'])->name('services');
+Route::get('/service/create',[AdminController::class,'servicecreate'])->name('service.create');
+Route::post('/service/insert',[AdminController::class,'serviceinsert'])->name('service.insert');
+Route::get('/service/delete/{id}',[AdminController::class,'servicedelete'])->name('service.delete');
+Route::get('/service/edit/{id}',[AdminController::class,'serviceedit'])->name('service.edit');
+Route::post('/service/update/{id}',[AdminController::class,'serviceupdate'])->name('service.update');
