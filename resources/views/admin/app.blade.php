@@ -10,9 +10,9 @@
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('admin/images/logo-mini.svg')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
+        <a class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <i class="fa fa-menu"></i>
+        </a>
         {{-- <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
             <div class="input-group">
@@ -29,12 +29,12 @@
          
           <li class="nav-item dropdown d-flex mr-4 ">
             <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-cog"></i>
+              <i class="fa fa-gear"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
               <a class="dropdown-item preview-item" href="logout">
-                  <i class="icon-inbox"></i> Logout
+                  <i class="fa fa-sign-out"></i> Logout
               </a>
             </div>
           </li>
