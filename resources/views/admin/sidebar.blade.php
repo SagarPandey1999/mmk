@@ -36,6 +36,12 @@
           <span class="menu-title">Service</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ route('map') == url()->current() ? 'active' : '' }}" href="{{ route('map') }}">
+          <i class="fa fa-map menu-icon"></i>
+          <span class="menu-title">Map</span>
+        </a>
+      </li>
 
       {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">

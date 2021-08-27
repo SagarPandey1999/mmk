@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Companys;
 use App\Models\contact;
+use App\Models\Map;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,8 @@ class HomeController extends Controller
     public function index(){
         $company = Companys::all();
         $service = Service::all();
+        $map = Map::where('type','same')->first();
+        $container['map'] = $map;
         $container['companys'] = $company;
         $container['services'] = $service;
         return view('front.index',$container);

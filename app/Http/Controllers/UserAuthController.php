@@ -60,7 +60,6 @@ class UserAuthController extends Controller
         if(session()->has('LoggedUser')){
             $user = User::select("*")->whereNotNull('last_seen')->orderBy('last_seen','DESC')->paginate(10);
             $container['users'] = $user;
-            // dd($container);
         }
         return view('admin.user.index',$container);
     }

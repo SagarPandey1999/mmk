@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Companys;
 use App\Models\contact;
+use App\Models\Map;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -122,5 +123,36 @@ class AdminController extends Controller
             $data->save();
             return redirect('services');
 
+    }
+
+    public function map(){
+        $map = Map::where('type','same')->first();
+        $container['map'] = $map;
+        return view('admin.map',$container);
+    }
+
+    public function mapinsert(Request $request){
+        $maps = Map::where('type',$request->type)->first();
+        if(!empty($maps)){
+            $maps->delete();
+        }
+        
+        $data = new Map();
+        $data->iframes = $request->iframe;
+        $data->link = $request->link;
+        $data->mobileone = $request->mobileone;
+        $data->mobiletwo = $request->mobiletwo;
+        $data->emailone = $request->emailone;
+        $data->emailtwo = $request->emailtwo;
+        $data->facebook = $request->facebook;
+        $data->twitter = $request->twitter;
+        $data->instagram = $request->instagram;
+        $data->linkedin = $request->linkedin;
+        $data->type = $request->type;
+        $data->save();
+
+        $map = Map::where('type','same')->first();
+        $container['map'] = $map;
+        return view('admin.map',$container);
     }
 }

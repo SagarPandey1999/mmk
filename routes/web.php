@@ -39,3 +39,5 @@ Route::post('/service/insert',[AdminController::class,'serviceinsert'])->name('s
 Route::get('/service/delete/{id}',[AdminController::class,'servicedelete'])->name('service.delete');
 Route::get('/service/edit/{id}',[AdminController::class,'serviceedit'])->name('service.edit');
 Route::post('/service/update/{id}',[AdminController::class,'serviceupdate'])->name('service.update');
+Route::get('/map',[AdminController::class,'map'])->name('map');
+Route::post('/map/insert',[AdminController::class,'mapinsert'])->name('map.insert');
