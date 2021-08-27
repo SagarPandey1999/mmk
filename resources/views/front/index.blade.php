@@ -508,12 +508,13 @@ https://templatemo.com/tm-565-onix-digital
             <div class="logo">
               <a href="#"><img src="assets/images/MMKLOGO.png" style="height: 85px; width: 157px;"  alt="Onix Digital TemplateMo"></a>
             </div>
-            <a href="#">info@company.com</a>
+            <a href="#">{{ $map->emailone }}</a>
+            <a href="#">{{ $map->emailtwo }}</a>
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="{{ $map->facebook }}"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="{{ $map->twitter }}"><i class="fa fa-twitter"></i></a></a></li>
+              <li><a href="{{ $map->linkedin }}"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="{{ $map->instagram }}"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>
