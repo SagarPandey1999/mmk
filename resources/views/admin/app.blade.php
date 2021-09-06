@@ -33,7 +33,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item" href="logout">
+              <a class="dropdown-item preview-item" href="login">
                   <i class="fa fa-sign-out"></i> Logout
               </a>
             </div>

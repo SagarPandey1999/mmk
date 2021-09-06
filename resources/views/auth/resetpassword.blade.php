@@ -23,20 +23,19 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
-                        <a href="{{url('register')}}" class="signup-image-link">Create an account</a>
+                        <a href="login" class="signup-image-link">Login </a>
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Sign up</h2>
-                        <form action="{{ route('auth.check')}}" method="POST" class="register-form" id="login-form">
+                        <h2 class="form-title">Forget Password</h2>
+                        <form action="{{ route('reset.password.post') }}" method="POST" class="register-form" id="login-form">
                             @csrf
-                            <div class="results">
-                                @if(Session::get('fail'))
-                                <div class="alert alert-danger">
-                                    {{ Session::get('fail') }}
+                            @if(session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
                                 </div>
-                                @endif
-                            </div>
+                            @endif
+                            <input type="hidden" name="token" value="{{ $token }}">
                             <div class="form-group">     
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="email" name="email" id="your_name" placeholder="Your Email" value="{{old('email')}}" />
@@ -44,22 +43,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="password" placeholder="Password"/>
                                 <span class="form-danger">@error('password'){{ $message }} @enderror</span>
                             </div>
-                            <a href="{{ route('forgetpassword') }}" class="signup-image-link">Forget Password</a>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password_confirmation" id="your_pass" placeholder="Password Confirmation"/>
+                                <span class="form-danger">@error('password_confirmation'){{ $message }} @enderror</span>
+                            </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Reset Password" />
                             </div>
                         </form>
-                        {{-- <div class="social-login">
-                            <span class="social-label">Or login with</span>
-                            <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                            </ul>
-                        </div> --}}
+                        
                     </div>
                 </div>
             </div>
