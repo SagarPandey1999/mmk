@@ -59,6 +59,8 @@
   </div>
   <!-- container-scroller -->
 
+  <script src="{{ asset('admin/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('admin/jquery-ui/jquery-ui.min.js') }}"></script>
   <!-- base:js -->
   <script src="{{ asset('admin/vendors/base/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->

@@ -10,15 +10,15 @@
               <p class="card-description">
                 {{-- Basic form elements --}}
               </p>
-              <form class="forms-sample" method="post" action="{{ route('company.insert') }}">
+              <form name="myForm" id="myForm" class="forms-sample" method="post" action="{{ route('company.insert') }}">
                   @csrf
                 <div class="form-group">
                   <label for="exampleInputName1">Title</label>
-                  <input type="text" class="form-control" id="exampleInputName1" name="title" placeholder="Title">
+                  <input id="title" type="text" class="form-control" id="exampleInputName1" name="title" placeholder="Title">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName1">Name</label>
-                  <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Name">
+                  <input id="name" type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Name">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail3">Email address</label>
@@ -46,4 +46,43 @@
     </div>
     <!-- partial -->
   </div>
+@endsection
+@section('extra_javascripts')
+  <script>
+    $('#myForm').submit(function() {
+        var x = document.forms["myForm"]["name"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        var y = document.forms["myForm"]["title"].value;
+        if (y == "") {
+            alert("title must be filled out");
+            return false;
+        }
+        var z = document.forms["myForm"]["email"].value;
+        if (z == "") {
+            alert("email must be filled out");
+            return false;
+        }
+        var a = document.forms["myForm"]["description"].value;
+        if (a == "") {
+            alert("description must be filled out");
+            return false;
+        }
+
+        var b = document.forms["myForm"]["link"].value;
+        if (b == "") {
+            alert("link must be filled out");
+            return false;
+        }
+
+        var q = document.forms["myForm"]["phone"].value;
+        if (q == "") {
+            alert("phone must be filled out");
+            return false;
+        }
+      });
+
+  </script>
 @endsection
