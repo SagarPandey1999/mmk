@@ -10,7 +10,7 @@
               <p class="card-description">
                 {{-- Basic form elements --}}
               </p>
-              <form class="forms-sample" method="post" action="{{ route('company.update') }}">
+              <form name="myForm" id="myForm" class="forms-sample" method="post" action="{{ route('company.update') }}">
                   @csrf
                 <div class="form-group">
                   <label for="exampleInputName1">Title</label>
@@ -47,4 +47,43 @@
     </div>
     <!-- partial -->
   </div>
+@endsection
+@section('extra_javascripts')
+  <script>
+    $('#myForm').submit(function() {
+        var x = document.forms["myForm"]["name"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        var y = document.forms["myForm"]["title"].value;
+        if (y == "") {
+            alert("title must be filled out");
+            return false;
+        }
+        var z = document.forms["myForm"]["email"].value;
+        if (z == "") {
+            alert("email must be filled out");
+            return false;
+        }
+        var a = document.forms["myForm"]["description"].value;
+        if (a == "") {
+            alert("description must be filled out");
+            return false;
+        }
+
+        var b = document.forms["myForm"]["link"].value;
+        if (b == "") {
+            alert("link must be filled out");
+            return false;
+        }
+
+        var q = document.forms["myForm"]["phone"].value;
+        if (q == "") {
+            alert("phone must be filled out");
+            return false;
+        }
+      });
+
+  </script>
 @endsection
